@@ -3,14 +3,32 @@ import './App.css';
 import {useReducer} from "react";
 
 
+const intialData = {
+  name: "Mohamed",
+  age: 43,
+  count: 0,
+  theme: "light"
+}
+const reducer = (state, action) =>{
+  switch  (action.type){
+    case "COMPLETE":
+      return ;
+
+      default:
+      return state;
+
+  }
+}
+
 function App() {
 
+const [allData, dispatch] = useReducer(reducer, intialData);
 
 
 
 
   return (
-    <div className={`App `}>
+    <div className={`App ${allData.theme}`}>
       <button > Toggle theme</button>
 {/* toggle switch theme */}
       <h2>Toggle switch</h2>
@@ -160,19 +178,19 @@ function App() {
         <button   style={{marginRight: "26px"}}>dark</button>
         <button   style={{marginRight: "26px"}}>grey</button>
         <button  >pink</button>
-        <h2>My name is {} </h2>
+        <h2>My name is {allData.name} </h2>
         <button  >Change name</button>
         <button  style={{marginLeft: "20px"}} >Reset name</button>
       </div>
 
       <div>
-        <h2> My age is {}</h2>
+        <h2> My age is {allData.age}</h2>
         <button >Change age</button>
         <button  style={{marginLeft:"20px"}}>Reset age</button>
       </div>
 
       <div>
-        <h2>{} </h2>
+        <h2>{allData.count} </h2>
         <button > Count  </button>
       </div>
 
