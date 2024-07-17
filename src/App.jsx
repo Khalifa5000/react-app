@@ -1,30 +1,21 @@
 
 import './App.css';
-import {useState} from "react";
+import {useReducer} from "react";
 
 
 function App() {
-const [ name, setName] = useState("Mohamed");
-const [ age , setAge]  = useState(43);
-const [count, setCount] = useState(0);
-const [theme, setTheme] = useState("light")
 
-const changeAge = () => {
-  setAge(34)
-}
 
-const addCount = () => { 
-  setCount(count + 1) ;
- }
+
 
 
   return (
-    <div className={`App ${theme}`}>
-      <button onClick={()=> {setTheme(theme== "light" ? "dark" : "light")}}> Toggle theme</button>
+    <div className={`App `}>
+      <button > Toggle theme</button>
 {/* toggle switch theme */}
       <h2>Toggle switch</h2>
 
-        <div onClick={()=> {setTheme(()=> {theme== "light" ? "dark" : "light"})}}>
+        <div >
 
             <div >
                 <svg display="none" >
@@ -165,28 +156,28 @@ const addCount = () => {
 
 
       <div className="card">
-        <button  onClick ={() =>{setTheme("light")}} style={{marginRight: "26px" }}>light</button>
-        <button  onClick ={() =>{setTheme("dark")}} style={{marginRight: "26px"}}>dark</button>
-        <button  onClick ={() =>{setTheme("grey")}} style={{marginRight: "26px"}}>grey</button>
-        <button  onClick ={() =>{setTheme("pink")}}>pink</button>
-        <h2>My name is {name} </h2>
-        <button onClick={ ()=>{ setName("Mohamed Khalifa")} } >Change name</button>
-        <button onClick={ ()=>{ setName("Mohamed")} } style={{marginLeft: "20px"}} >Reset name</button>
+        <button   style={{marginRight: "26px" }}>light</button>
+        <button   style={{marginRight: "26px"}}>dark</button>
+        <button   style={{marginRight: "26px"}}>grey</button>
+        <button  >pink</button>
+        <h2>My name is {} </h2>
+        <button  >Change name</button>
+        <button  style={{marginLeft: "20px"}} >Reset name</button>
       </div>
 
       <div>
-        <h2> My age is {age}</h2>
-        <button onClick={ changeAge }>Change age</button>
-        <button onClick={ ()=> {setAge(43)} } style={{marginLeft:"20px"}}>Reset age</button>
+        <h2> My age is {}</h2>
+        <button >Change age</button>
+        <button  style={{marginLeft:"20px"}}>Reset age</button>
       </div>
 
       <div>
-        <h2>{count} </h2>
-        <button onClick={addCount}> Count  </button>
+        <h2>{} </h2>
+        <button > Count  </button>
       </div>
 
       <div>
-        <button onClick={()=> {setCount(count - 1)}}> Subtraction  </button>
+        <button > Subtraction  </button>
       </div>
 
     </div>
