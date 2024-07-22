@@ -16,7 +16,12 @@ const reducer = (state, action) =>{
       
       case "RESET_NAME":
       return {...state, name: action.newValue };
-      
+      case "CHANGE_AGE":
+        return {...state, age: action.newValue };
+        
+        case "RESET_AGE":
+        return {...state, age: action.newValue };
+
       default:
       return state;
 
@@ -192,8 +197,12 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
       <div>
         <h2> My age is {allData.age}</h2>
-        <button >Change age</button>
-        <button  style={{marginLeft:"20px"}}>Reset age</button>
+        <button onClick={()=>{
+          dispatch({type: "CHANGE_AGE", newValue: 33 })
+        }}  >Change age</button>
+        <button onClick={()=>{
+          dispatch({type: "RESET_AGE", newValue: 43 })
+        }}  style={{marginLeft:"20px"}}>Reset age</button>
       </div>
 
       <div>
