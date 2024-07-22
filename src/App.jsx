@@ -11,8 +11,22 @@ const intialData = {
 }
 const reducer = (state, action) =>{
   switch  (action.type){
-    case "CHANGE_NAME":
-      return {...state, name: action.newValue };
+      case "CHANGE_NAME":
+        return {...state, name: action.newValue };
+      
+      case "RESET_NAME":
+        return {...state, name: action.newValue };
+      case "CHANGE_AGE":
+        return {...state, age: action.newValue };
+        
+      case "RESET_AGE":
+        return {...state, age: action.newValue };
+      case "CHANGE_COUNT":
+          return {...state, count: action.newValue };
+          
+      case "RESET_COUNT":
+          return {...state, count: action.newValue };
+
 
       default:
       return state;
@@ -182,22 +196,32 @@ const [allData, dispatch] = useReducer(reducer, intialData);
         <button onClick={()=>{
           dispatch({type: "CHANGE_NAME", newValue: "Mohamed Khalifa" })
         }} >Change name</button>
-        <button  style={{marginLeft: "20px"}} >Reset name</button>
+        <button onClick={()=>{
+          dispatch({type: "RESET_NAME", newValue: "Mohamed" })
+        }}  style={{marginLeft: "20px"}} >Reset name</button>
       </div>
 
       <div>
         <h2> My age is {allData.age}</h2>
-        <button >Change age</button>
-        <button  style={{marginLeft:"20px"}}>Reset age</button>
+        <button onClick={()=>{
+          dispatch({type: "CHANGE_AGE", newValue: 33 })
+        }}  >Change age</button>
+        <button onClick={()=>{
+          dispatch({type: "RESET_AGE", newValue: 43 })
+        }}  style={{marginLeft:"20px"}}>Reset age</button>
       </div>
 
       <div>
         <h2>{allData.count} </h2>
-        <button > Count  </button>
+        <button onClick={()=>{
+          dispatch({type: "CHANGE_COUNT", newValue: allData.count + 1 })
+        }} > Count  </button>
       </div>
 
       <div>
-        <button > Subtraction  </button>
+        <button onClick={()=>{
+          dispatch({type: "RESET_COUNT", newValue: allData.count - 1 })
+        }}> Subtraction  </button>
       </div>
 
     </div>
