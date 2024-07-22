@@ -13,7 +13,10 @@ const reducer = (state, action) =>{
   switch  (action.type){
     case "CHANGE_NAME":
       return {...state, name: action.newValue };
-
+      
+      case "RESET_NAME":
+      return {...state, name: action.newValue };
+      
       default:
       return state;
 
@@ -182,7 +185,9 @@ const [allData, dispatch] = useReducer(reducer, intialData);
         <button onClick={()=>{
           dispatch({type: "CHANGE_NAME", newValue: "Mohamed Khalifa" })
         }} >Change name</button>
-        <button  style={{marginLeft: "20px"}} >Reset name</button>
+        <button onClick={()=>{
+          dispatch({type: "RESET_NAME", newValue: "Mohamed" })
+        }}  style={{marginLeft: "20px"}} >Reset name</button>
       </div>
 
       <div>
