@@ -26,6 +26,8 @@ const reducer = (state, action) =>{
           
       case "RESET_COUNT":
           return {...state, count: action.newValue };
+      case "CHANGE_COLOR":
+        return {...state, theme: action.newValue};
 
 
       default:
@@ -43,11 +45,17 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
   return (
     <div className={`App ${allData.theme}`}>
-      <button > Toggle theme</button>
+      <button onClick={()=>{
+        dispatch({type: "CHANGE_COLOR", newValue: allData.theme == "light"? "dark" : "light"})
+      }}> Toggle theme</button>
 {/* toggle switch theme */}
       <h2>Toggle switch</h2>
 
-        <div >
+        <div onClick={()=>{
+        dispatch({type: "CHANGE_COLOR", newValue: ()=> {
+          allData.theme == "light"? "dark" : "light"
+        }})
+      }}>
 
             <div >
                 <svg display="none" >
