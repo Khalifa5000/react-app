@@ -11,16 +11,22 @@ const intialData = {
 }
 const reducer = (state, action) =>{
   switch  (action.type){
-    case "CHANGE_NAME":
-      return {...state, name: action.newValue };
+      case "CHANGE_NAME":
+        return {...state, name: action.newValue };
       
       case "RESET_NAME":
-      return {...state, name: action.newValue };
+        return {...state, name: action.newValue };
       case "CHANGE_AGE":
         return {...state, age: action.newValue };
         
-        case "RESET_AGE":
+      case "RESET_AGE":
         return {...state, age: action.newValue };
+      case "CHANGE_COUNT":
+          return {...state, count: action.newValue };
+          
+      case "RESET_COUNT":
+          return {...state, count: action.newValue };
+
 
       default:
       return state;
@@ -207,11 +213,15 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
       <div>
         <h2>{allData.count} </h2>
-        <button > Count  </button>
+        <button onClick={()=>{
+          dispatch({type: "CHANGE_COUNT", newValue: allData.count + 1 })
+        }} > Count  </button>
       </div>
 
       <div>
-        <button > Subtraction  </button>
+        <button onClick={()=>{
+          dispatch({type: "RESET_COUNT", newValue: allData.count - 1 })
+        }}> Subtraction  </button>
       </div>
 
     </div>
