@@ -14,18 +14,12 @@ const reducer = (state, action) =>{
       case "CHANGE_NAME":
         return {...state, name: action.newValue };
       
-      case "RESET_NAME":
-        return {...state, name: action.newValue };
       case "CHANGE_AGE":
         return {...state, age: action.newValue };
         
-      case "RESET_AGE":
-        return {...state, age: action.newValue };
       case "CHANGE_COUNT":
           return {...state, count: action.newValue };
           
-      case "RESET_COUNT":
-          return {...state, count: action.newValue };
       case "CHANGE_COLOR":
         return {...state, theme: action.newValue};
 
@@ -53,7 +47,7 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
         <div onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: ()=> {
-          allData.theme == "light"? "dark" : "light"
+          allData.theme == "light"? "dark" : "light";
         }})
       }}>
 
@@ -196,16 +190,23 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
 
       <div className="card">
-        <button   style={{marginRight: "26px" }}>light</button>
-        <button   style={{marginRight: "26px"}}>dark</button>
-        <button   style={{marginRight: "26px"}}>grey</button>
-        <button  >pink</button>
+        <button onClick={()=>{
+        dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "light"})}} 
+         style={{marginRight: "26px" }}>light</button>
+        <button onClick={()=>{
+        dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "dark"})}}
+          style={{marginRight: "26px"}}>dark</button>
+        <button onClick={()=>{
+        dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "grey"})}}
+          style={{marginRight: "26px"}}>grey</button>
+        <button onClick={()=>{
+        dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "pink"})}} >pink</button>
         <h2>My name is {allData.name} </h2>
         <button onClick={()=>{
           dispatch({type: "CHANGE_NAME", newValue: "Mohamed Khalifa" })
         }} >Change name</button>
         <button onClick={()=>{
-          dispatch({type: "RESET_NAME", newValue: "Mohamed" })
+          dispatch({type: "CHANGE_NAME", newValue: "Mohamed" })
         }}  style={{marginLeft: "20px"}} >Reset name</button>
       </div>
 
@@ -215,7 +216,7 @@ const [allData, dispatch] = useReducer(reducer, intialData);
           dispatch({type: "CHANGE_AGE", newValue: 33 })
         }}  >Change age</button>
         <button onClick={()=>{
-          dispatch({type: "RESET_AGE", newValue: 43 })
+          dispatch({type: "CHANGE_AGE", newValue: 43 })
         }}  style={{marginLeft:"20px"}}>Reset age</button>
       </div>
 
@@ -228,7 +229,7 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
       <div>
         <button onClick={()=>{
-          dispatch({type: "RESET_COUNT", newValue: allData.count - 1 })
+          dispatch({type: "CHANGE_COUNT", newValue: allData.count - 1 })
         }}> Subtraction  </button>
       </div>
 
