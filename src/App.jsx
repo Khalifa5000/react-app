@@ -23,7 +23,6 @@ const reducer = (state, action) =>{
       case "CHANGE_COLOR":
         return {...state, theme: action.newValue};
 
-
       default:
       return state;
 
@@ -213,7 +212,7 @@ const [allData, dispatch] = useReducer(reducer, intialData);
       <div>
         <h2> My age is {allData.age}</h2>
         <button onClick={()=>{
-          dispatch({type: "CHANGE_AGE", newValue: 33 })
+          dispatch({type: "CHANGE_AGE", newValue: 34 })
         }}  >Change age</button>
         <button onClick={()=>{
           dispatch({type: "CHANGE_AGE", newValue: 43 })
@@ -221,17 +220,17 @@ const [allData, dispatch] = useReducer(reducer, intialData);
       </div>
 
       <div>
-        <h2>{allData.count} </h2>
+        <h2  style={{marginRight:"30px"}}>{allData.count} </h2>
         <button onClick={()=>{
           dispatch({type: "CHANGE_COUNT", newValue: allData.count + 1 })
-        }} > Count  </button>
+        }}  style={{marginRight:"30px"}}> Count  </button>
+
+                <button onClick={()=>{
+          dispatch({type: "CHANGE_COUNT", newValue: allData.count - 1 })
+        }} > Subtraction</button>
       </div>
 
-      <div>
-        <button onClick={()=>{
-          dispatch({type: "CHANGE_COUNT", newValue: allData.count - 1 })
-        }}> Subtraction  </button>
-      </div>
+
 
     </div>
   )
