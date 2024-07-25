@@ -191,15 +191,15 @@ const [allData, dispatch] = useReducer(reducer, intialData);
       <div className="card">
         <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "light"})}} 
-         style={{marginRight: "26px" }}>light</button>
+         style={{marginRight: "26px" }}>Light</button>
         <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "dark"})}}
-          style={{marginRight: "26px"}}>dark</button>
+          style={{marginRight: "26px"}}>Dark</button>
         <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "grey"})}}
-          style={{marginRight: "26px"}}>grey</button>
+          style={{marginRight: "26px"}}>Grey</button>
         <button onClick={()=>{
-        dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "pink"})}} >pink</button>
+        dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "pink"})}} >Pink</button>
         <h2>My name is {allData.name} </h2>
         <button onClick={()=>{
           dispatch({type: "CHANGE_NAME", newValue: "Mohamed Khalifa" })
@@ -220,12 +220,13 @@ const [allData, dispatch] = useReducer(reducer, intialData);
       </div>
 
       <div>
-        <h2  >{allData.count} </h2>
+        <h2 >{allData.count} </h2>
+        
         <button onClick={()=>{
           dispatch({type: "CHANGE_COUNT", newValue: allData.count + 1 })
         }}  style={{marginRight:"20px", width: "130px"}}> Count  </button>
 
-                <button onClick={()=>{
+        <button onClick={()=>{
           dispatch({type: "CHANGE_COUNT", newValue: allData.count - 1 })
         }} > Subtraction</button>
       </div>
