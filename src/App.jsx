@@ -1,6 +1,7 @@
 
 import './App.css';
 import {useReducer} from "react";
+import { Link } from 'react-router-dom';
 
 
 const intialData = {
@@ -38,6 +39,10 @@ const [allData, dispatch] = useReducer(reducer, intialData);
 
   return (
     <div className={`App ${allData.theme}`}>
+<Link to="/about" >
+<button style={{margin: "20px"}}>Go to About page</button>
+</Link>
+
       <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme == "light"? "dark" : "light"})
       }}> Toggle theme</button>
