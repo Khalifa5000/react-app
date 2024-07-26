@@ -207,6 +207,9 @@ const [allData, dispatch] = useReducer(reducer, intialData);
         <button onClick={()=>{
           dispatch({type: "CHANGE_NAME", newValue: "Mohamed" })
         }}  style={{marginLeft: "20px"}} >Reset name</button>
+        <button onClick={()=>{
+          dispatch({type: "CHANGE_NAME", newValue: allData.name == "Mohamed" ? "Mohamed Khalifa" : "Mohamed" })
+        }}  style={{marginLeft: "20px"}} >Toggle name</button>
       </div>
 
       <div>
@@ -217,6 +220,9 @@ const [allData, dispatch] = useReducer(reducer, intialData);
         <button onClick={()=>{
           dispatch({type: "CHANGE_AGE", newValue: 43 })
         }}  style={{marginLeft:"20px"}}>Reset age</button>
+        <button onClick={()=>{
+          dispatch({type: "CHANGE_AGE", newValue: allData.age == 43 ? 34 : 43 })
+        }}  style={{marginLeft: "20px"}} >Toggle age</button>
       </div>
 
       <div>
