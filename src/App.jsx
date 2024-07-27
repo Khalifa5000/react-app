@@ -1,7 +1,8 @@
 
 import './App.css';
-import {useReducer} from "react";
+import {useCallback, useContext, useReducer} from "react";
 import { Link } from 'react-router-dom';
+import ThemeContext from './context/theme_context';
 
 
 const intialData = {
@@ -31,7 +32,7 @@ const reducer = (state, action) =>{
 }
 
 function App() {
-
+const {name} = useContext(ThemeContext)
 const [allData, dispatch] = useReducer(reducer, intialData);
 
 
@@ -205,7 +206,7 @@ const [allData, dispatch] = useReducer(reducer, intialData);
           style={{marginRight: "26px"}}>Grey</button>
         <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "pink"})}} >Pink</button>
-        <h2>My name is {allData.name} </h2>
+        <h2>My name is {name} </h2>
         <button onClick={()=>{
           dispatch({type: "CHANGE_NAME", newValue: "Mohamed Khalifa" })
         }} >Change name</button>

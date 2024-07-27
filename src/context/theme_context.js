@@ -1,6 +1,7 @@
 
 import { createContext, useReducer } from "react";
-
+import { useContext } from "react";
+import {themeContexttt} from "./theme_context";
 
 const ThemeContext = createContext();
 const intialData = {
