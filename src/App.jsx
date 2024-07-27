@@ -1,7 +1,8 @@
 
 import './App.css';
-import {useReducer} from "react";
+import {useCallback, useContext, useReducer} from "react";
 import { Link } from 'react-router-dom';
+import ThemeContext from './context/theme_context';
 
 
 const intialData = {
@@ -31,7 +32,7 @@ const reducer = (state, action) =>{
 }
 
 function App() {
-
+const {myName} = useContext(ThemeContext)
 const [allData, dispatch] = useReducer(reducer, intialData);
 
 
