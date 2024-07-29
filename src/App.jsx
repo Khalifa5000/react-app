@@ -1,6 +1,6 @@
 
 import './App.css';
-import {useCallback, useContext, useReducer} from "react";
+import { useContext, useReducer} from "react";
 import { Link } from 'react-router-dom';
 import ThemeContext from './context/theme_context';
 
