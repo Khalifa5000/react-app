@@ -5,41 +5,43 @@ import { Link } from 'react-router-dom';
 import ThemeContext from './context/theme_context';
 
 
-const intialData = {
-  name: "Mohamed",
-  age: 43,
-  count: 0,
-  theme: "light"
-}
-const reducer = (state, action) =>{
-  switch  (action.type){
-      case "CHANGE_NAME":
-        return {...state, name: action.newValue };
+// const intialData = {
+//   name: "Mohamed",
+//   age: 43,
+//   count: 0,
+//   theme: "light"
+// }
+
+
+// const reducer = (state, action) =>{
+//   switch  (action.type){
+//       case "CHANGE_NAME":
+//         return {...state, name: action.newValue };
       
-      case "CHANGE_AGE":
-        return {...state, age: action.newValue };
+//       case "CHANGE_AGE":
+//         return {...state, age: action.newValue };
         
-      case "CHANGE_COUNT":
-          return {...state, count: action.newValue };
+//       case "CHANGE_COUNT":
+//           return {...state, count: action.newValue };
           
-      case "CHANGE_COLOR":
-        return {...state, theme: action.newValue};
+//       case "CHANGE_COLOR":
+//         return {...state, theme: action.newValue};
 
-      default:
-      return state;
+//       default:
+//       return state;
 
-  }
-}
+//   }
+// }
 
 function App() {
 const {name} = useContext(ThemeContext)
-const [allData, dispatch] = useReducer(reducer, intialData);
+// const [allData, dispatch] = useReducer(reducer, intialData);
 
 
 
 
   return (
-    <div className={`App ${allData.theme}`}>
+    <div className={`App`}>
 <Link to="/about" >
 <button style={{margin: "20px"}}>Go to About page</button>
 </Link>

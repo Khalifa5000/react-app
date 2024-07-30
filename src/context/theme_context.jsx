@@ -1,7 +1,7 @@
 
 import { createContext, useReducer } from "react";
-import { useContext } from "react";
-import {themeContexttt} from "./theme_context";
+// import { useContext } from "react";
+// import {themeContexttt} from "./theme_context";
 
 const ThemeContext = createContext();
 const intialData = {
@@ -14,13 +14,13 @@ const intialData = {
 const reducer = ()=>{
 
 }
-export const ThemeProvider = ({childern}) => {
+export function ThemeProvider ({childern})  {
 
   const [firstState, dispatch] = useReducer (reducer, intialData)
   return (
-    <themeContexttt.provider value={{...firstState}}>
+    <ThemeContext.provider value={{...firstState}}>
       {childern}
-    </themeContexttt.provider>
+    </ThemeContext.provider>
   );
 }
 
