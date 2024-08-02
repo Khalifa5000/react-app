@@ -1,6 +1,6 @@
 
 import './App.css';
-import { useContext, useReducer} from "react";
+import { useContext, } from "react";
 import { Link } from 'react-router-dom';
 import ThemeContext from './context/theme_context';
 
@@ -46,13 +46,13 @@ const {name} = useContext(ThemeContext)
 <button style={{margin: "20px"}}>Go to About page</button>
 </Link>
 
-      <button onClick={()=>{
+      {/* <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme == "light"? "dark" : "light"})
-      }}> Toggle theme</button>
+      }}> Toggle theme</button> */}
 {/* toggle switch theme */}
       <h2>Toggle switch</h2>
 
-        <div onClick={()=>{
+        {/* <div onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: ()=> {
           allData.theme == "light"? "dark" : "light";
         }})
@@ -192,10 +192,10 @@ const {name} = useContext(ThemeContext)
             </div>
 
 
-        </div>
+        </div> */}
 
 
-
+{/* 
       <div className="card">
         <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "light"})}} 
@@ -208,19 +208,20 @@ const {name} = useContext(ThemeContext)
           style={{marginRight: "26px"}}>Grey</button>
         <button onClick={()=>{
         dispatch({type: "CHANGE_COLOR", newValue: allData.theme = "pink"})}} >Pink</button>
-        <h2>My name is {name} </h2>
-        <button onClick={()=>{
-          dispatch({type: "CHANGE_NAME", newValue: "Mohamed Khalifa" })
-        }} >Change name</button>
-        <button onClick={()=>{
-          dispatch({type: "CHANGE_NAME", newValue: "Mohamed" })
-        }}  style={{marginLeft: "20px"}} >Reset name</button>
-        <button onClick={()=>{
-          dispatch({type: "CHANGE_NAME", newValue: allData.name == "Mohamed" ? "Mohamed Khalifa" : "Mohamed" })
-        }}  style={{marginLeft: "20px"}} >Toggle name</button>
-      </div>
+      </div> */}
 
-      <div>
+
+        <div> 
+        <h2>My name is {name} </h2>
+        <button  >Change name</button>
+        <button  style={{marginLeft: "20px"}} >Reset name</button>
+        <button  style={{marginLeft: "20px"}} >Toggle name</button>
+
+        </div>
+      
+
+
+      {/* <div>
         <h2> My age is {allData.age}</h2>
         <button onClick={()=>{
           dispatch({type: "CHANGE_AGE", newValue: 34 })
@@ -243,7 +244,7 @@ const {name} = useContext(ThemeContext)
         <button onClick={()=>{
           dispatch({type: "CHANGE_COUNT", newValue: allData.count - 1 })
         }} > Subtraction</button>
-      </div>
+      </div> */}
 
 
 
