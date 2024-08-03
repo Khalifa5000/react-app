@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import NotFound from './Not_found.jsx';
 
-import { ThemeProvider } from './context/theme_context.js';
+import { ThemeProvider } from './context/theme_context.jsx';
 
 
 const router = createBrowserRouter([
