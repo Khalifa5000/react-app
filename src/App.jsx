@@ -35,7 +35,7 @@ import ThemeContext from './context/theme_context';
 
 function App() {
 const {name} = useContext(ThemeContext)
-// const [allData, dispatch] = useReducer(reducer, intialData);
+const [allData, dispatch] = useReducer(reducer, intialData);
 
 
 
